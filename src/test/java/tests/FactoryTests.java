@@ -52,5 +52,4 @@ public class FactoryTests {
     public void close() {
         driver.quit();
     }
-
 }
