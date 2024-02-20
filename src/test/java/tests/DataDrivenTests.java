@@ -18,8 +18,6 @@ public class DataDrivenTests {
     @ParameterizedTest
     @CsvSource({"morpheus,leader", "jack,seller", "john,builder", "mik,postman"})
     public void paramsTest(String name, String job){
-        System.out.println(name);
-        System.out.println(job);
         Create user = new Create(name, job);
         Response response = given()
                 .contentType(ContentType.JSON)
@@ -38,7 +36,6 @@ public class DataDrivenTests {
     @ParameterizedTest
     @MethodSource(value = "testUsers")
     public void objectParamsTest(UserModel userModel){
-        System.out.println(userModel);
         Response response = given()
                 .contentType(ContentType.JSON)
                 .body(userModel)
